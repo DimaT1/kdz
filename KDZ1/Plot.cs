@@ -32,6 +32,12 @@ namespace KDZ1
             color3 = Color.Green;
         }
 
+        public void Clear(Chart chart)
+        {
+            chart.Series[0].Points.Clear();
+            chart.Series[1].Points.Clear();
+        }
+
 
         public void Print(Chart chart, MyFunction f, bool highlight = false)
         {

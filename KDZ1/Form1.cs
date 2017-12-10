@@ -40,7 +40,7 @@ namespace KDZ1
             plot = new Plot();
             ResetTrackBarLabels(dxTrackBar1.Value, dxTrackBar2.Value, dxLabel1, dxLabel2, dxLabel3);
             f.DeltaX = TrackBarValuesToDouble(dxTrackBar1.Value, dxTrackBar2.Value);
-            plot.Print(chart, f);
+            plot.Clear(chart);
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -97,6 +97,18 @@ namespace KDZ1
         private void highlightButton_Click(object sender, EventArgs e)
         {
             plot.Print(chart, f, highlight: true);
+        }
+
+        private void defaultSetButton_Click(object sender, EventArgs e)
+        {
+            f = new MyFunction(1, 0.01);
+            plot = new Plot();
+            paramaUpDown.Value = 1;
+            dxTrackBar1.Value = dxTrackBar1.Minimum;
+            dxTrackBar2.Value = dxTrackBar2.Minimum;
+            ResetTrackBarLabels(dxTrackBar1.Value, dxTrackBar2.Value, dxLabel1, dxLabel2, dxLabel3);
+            f.DeltaX = TrackBarValuesToDouble(dxTrackBar1.Value, dxTrackBar2.Value);
+            plot.Clear(chart);
         }
     }
 }
