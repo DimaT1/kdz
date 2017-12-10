@@ -35,8 +35,11 @@ namespace KDZ1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            colorDialog1.FullOpen = true;
             f = new MyFunction(1, 0.01);
             plot = new Plot();
+            ResetTrackBarLabels(dxTrackBar1.Value, dxTrackBar2.Value, dxLabel1, dxLabel2, dxLabel3);
+            f.DeltaX = TrackBarValuesToDouble(dxTrackBar1.Value, dxTrackBar2.Value);
             plot.Print(chart, f);
         }
 
@@ -68,6 +71,32 @@ namespace KDZ1
             ResetTrackBarLabels(dxTrackBar1.Value, dxTrackBar2.Value, dxLabel1, dxLabel2, dxLabel3);
             f.DeltaX = TrackBarValuesToDouble(dxTrackBar1.Value, dxTrackBar2.Value);
             plot.Print(chart, f);
+        }
+
+        private void colorButton1_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() != DialogResult.Cancel)
+                plot.Color1 = colorDialog1.Color;
+            plot.Print(chart, f);
+        }
+
+        private void colorButton2_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() != DialogResult.Cancel)
+                plot.Color2 = colorDialog1.Color;
+            plot.Print(chart, f);
+        }
+
+        private void colorButton3_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() != DialogResult.Cancel)
+                plot.Color3 = colorDialog1.Color;
+            plot.Print(chart, f);
+        }
+
+        private void highlightButton_Click(object sender, EventArgs e)
+        {
+            plot.Print(chart, f, highlight: true);
         }
     }
 }

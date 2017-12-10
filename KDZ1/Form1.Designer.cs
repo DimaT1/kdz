@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +52,7 @@
             this.colorButton2 = new System.Windows.Forms.Button();
             this.colorButton1 = new System.Windows.Forms.Button();
             this.highlightButton = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paramaUpDown)).BeginInit();
@@ -64,25 +65,25 @@
             // 
             // chart
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chart.Legends.Add(legend9);
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart.Legends.Add(legend1);
             this.chart.Location = new System.Drawing.Point(12, 25);
             this.chart.Name = "chart";
-            series17.ChartArea = "ChartArea1";
-            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series17.EmptyPointStyle.Name = "Функция";
-            series17.Legend = "Legend1";
-            series17.LegendText = "Функция";
-            series17.Name = "Series1";
-            series18.ChartArea = "ChartArea1";
-            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series18.Legend = "Legend1";
-            series18.LegendText = "Производная";
-            series18.Name = "Series2";
-            this.chart.Series.Add(series17);
-            this.chart.Series.Add(series18);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.EmptyPointStyle.Name = "Функция";
+            series1.Legend = "Legend1";
+            series1.LegendText = "Функция";
+            series1.Name = "Series1";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.LegendText = "Производная";
+            series2.Name = "Series2";
+            this.chart.Series.Add(series1);
+            this.chart.Series.Add(series2);
             this.chart.Size = new System.Drawing.Size(640, 420);
             this.chart.TabIndex = 0;
             this.chart.Text = "chart1";
@@ -108,7 +109,7 @@
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -256,6 +257,7 @@
             this.colorButton3.TabIndex = 2;
             this.colorButton3.Text = "Цвет 3";
             this.colorButton3.UseVisualStyleBackColor = true;
+            this.colorButton3.Click += new System.EventHandler(this.colorButton3_Click);
             // 
             // colorButton2
             // 
@@ -265,6 +267,7 @@
             this.colorButton2.TabIndex = 1;
             this.colorButton2.Text = "Цвет 2";
             this.colorButton2.UseVisualStyleBackColor = true;
+            this.colorButton2.Click += new System.EventHandler(this.colorButton2_Click);
             // 
             // colorButton1
             // 
@@ -274,6 +277,7 @@
             this.colorButton1.TabIndex = 0;
             this.colorButton1.Text = "Цвет 1";
             this.colorButton1.UseVisualStyleBackColor = true;
+            this.colorButton1.Click += new System.EventHandler(this.colorButton1_Click);
             // 
             // highlightButton
             // 
@@ -283,6 +287,7 @@
             this.highlightButton.TabIndex = 9;
             this.highlightButton.Text = "Выделить промежутки";
             this.highlightButton.UseVisualStyleBackColor = true;
+            this.highlightButton.Click += new System.EventHandler(this.highlightButton_Click);
             // 
             // Form1
             // 
@@ -339,6 +344,7 @@
         private System.Windows.Forms.Button colorButton2;
         private System.Windows.Forms.Button colorButton1;
         private System.Windows.Forms.Button highlightButton;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 

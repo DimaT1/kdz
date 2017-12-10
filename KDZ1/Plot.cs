@@ -24,12 +24,12 @@ namespace KDZ1
             set { color3 = value; }
         }
 
-        
+
         public Plot()
         {
-            color1 = Color.Blue;
-            color2 = Color.Yellow;
-            color3 = Color.Red;
+            color1 = Color.IndianRed;
+            color2 = Color.LightCoral;
+            color3 = Color.Green;
         }
 
 
@@ -38,12 +38,31 @@ namespace KDZ1
             chart.Series[0].Points.Clear();
             chart.Series[1].Points.Clear();
 
+            chart.Series[0].Color = color1;
+            chart.Series[1].Color = color2;
+
 
             for (double x = 0; x < 4; x += 0.01)
             {
                 chart.Series[0].Points.AddXY(x, f.Evaluate(x));
                 chart.Series[1].Points.AddXY(x, f.Derivative(x));
             }
+
+            if (highlight)
+            {
+                for (int i = 0; i < chart.Series[0].Points.Count; i++)
+                {
+                    if ((chart.Series[0].Points.ElementAt(i).YValues[0] < double.Epsilon) && (!chart.Series[0].Points.ElementAt(i).IsEmpty))
+                    {
+                        chart.Series[0].Points.ElementAt(i).Color = color3;
+                    }
+
+                    if ((chart.Series[1].Points.ElementAt(i).YValues[0] < -double.Epsilon) && (!chart.Series[1].Points.ElementAt(i).IsEmpty))
+                    {
+                        chart.Series[1].Points.ElementAt(i).Color = color3;
+                    }
+                }
+            }              
         }
     }
 }
