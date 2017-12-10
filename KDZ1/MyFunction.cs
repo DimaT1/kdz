@@ -15,7 +15,7 @@ namespace KDZ1
         }
 
         private double dx = 0.01;
-        public int DeltaX
+        public double DeltaX
         {
             set { dx = value; }
         }

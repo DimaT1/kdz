@@ -13,6 +13,20 @@ namespace KDZ1
     public partial class Form1 : Form
     {
         MyFunction f;
+        Plot plot;
+
+        private static double TrackBarValuesToDouble(decimal a, decimal b)
+        {
+            return 0.1 * (double)a + 0.01 * (double)b;
+        }
+
+        private static void ResetTrackBarLabels(decimal track1, decimal track2,
+                                                Label label1, Label label2, Label label3)
+        {
+            label2.Text = $"{track1} * 0.1";
+            label3.Text = $"{track2} * 0.01";
+            label1.Text = $"Δx = {TrackBarValuesToDouble(track1, track2)}";
+        }
 
         public Form1()
         {
@@ -22,7 +36,8 @@ namespace KDZ1
         private void Form1_Load(object sender, EventArgs e)
         {
             f = new MyFunction(1, 0.01);
-            Plot.Print(chart, f);   
+            plot = new Plot();
+            plot.Print(chart, f);
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -38,7 +53,21 @@ namespace KDZ1
         private void paramaUpDown_ValueChanged(object sender, EventArgs e)
         {
             f.A = (int)paramaUpDown.Value;
-            Plot.Print(chart, f);
+            plot.Print(chart, f);
+        }
+
+        private void dxTrackBar1_Scroll(object sender, EventArgs e)
+        {
+            ResetTrackBarLabels(dxTrackBar1.Value, dxTrackBar2.Value, dxLabel1, dxLabel2, dxLabel3);
+            f.DeltaX = TrackBarValuesToDouble(dxTrackBar1.Value, dxTrackBar2.Value);
+            plot.Print(chart, f);
+        }
+
+        private void dxTrackBar2_Scroll(object sender, EventArgs e)
+        {
+            ResetTrackBarLabels(dxTrackBar1.Value, dxTrackBar2.Value, dxLabel1, dxLabel2, dxLabel3);
+            f.DeltaX = TrackBarValuesToDouble(dxTrackBar1.Value, dxTrackBar2.Value);
+            plot.Print(chart, f);
         }
     }
 }

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,25 +64,25 @@
             // 
             // chart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart.Legends.Add(legend3);
+            chartArea9.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chart.Legends.Add(legend9);
             this.chart.Location = new System.Drawing.Point(12, 25);
             this.chart.Name = "chart";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.EmptyPointStyle.Name = "Функция";
-            series5.Legend = "Legend1";
-            series5.LegendText = "Функция";
-            series5.Name = "Series1";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Legend = "Legend1";
-            series6.LegendText = "Производная";
-            series6.Name = "Series2";
-            this.chart.Series.Add(series5);
-            this.chart.Series.Add(series6);
+            series17.ChartArea = "ChartArea1";
+            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series17.EmptyPointStyle.Name = "Функция";
+            series17.Legend = "Legend1";
+            series17.LegendText = "Функция";
+            series17.Name = "Series1";
+            series18.ChartArea = "ChartArea1";
+            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series18.Legend = "Legend1";
+            series18.LegendText = "Производная";
+            series18.Name = "Series2";
+            this.chart.Series.Add(series17);
+            this.chart.Series.Add(series18);
             this.chart.Size = new System.Drawing.Size(640, 420);
             this.chart.TabIndex = 0;
             this.chart.Text = "chart1";
@@ -180,7 +180,7 @@
             // dxLabel3
             // 
             this.dxLabel3.AutoSize = true;
-            this.dxLabel3.Location = new System.Drawing.Point(197, 67);
+            this.dxLabel3.Location = new System.Drawing.Point(187, 70);
             this.dxLabel3.Name = "dxLabel3";
             this.dxLabel3.Size = new System.Drawing.Size(35, 13);
             this.dxLabel3.TabIndex = 3;
@@ -189,7 +189,7 @@
             // dxLabel2
             // 
             this.dxLabel2.AutoSize = true;
-            this.dxLabel2.Location = new System.Drawing.Point(197, 34);
+            this.dxLabel2.Location = new System.Drawing.Point(187, 34);
             this.dxLabel2.Name = "dxLabel2";
             this.dxLabel2.Size = new System.Drawing.Size(35, 13);
             this.dxLabel2.TabIndex = 2;
@@ -197,17 +197,24 @@
             // 
             // dxTrackBar2
             // 
-            this.dxTrackBar2.Location = new System.Drawing.Point(90, 59);
+            this.dxTrackBar2.Location = new System.Drawing.Point(77, 59);
+            this.dxTrackBar2.Minimum = 1;
             this.dxTrackBar2.Name = "dxTrackBar2";
             this.dxTrackBar2.Size = new System.Drawing.Size(104, 45);
             this.dxTrackBar2.TabIndex = 1;
+            this.dxTrackBar2.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.dxTrackBar2.Value = 1;
+            this.dxTrackBar2.Scroll += new System.EventHandler(this.dxTrackBar2_Scroll);
             // 
             // dxTrackBar1
             // 
-            this.dxTrackBar1.Location = new System.Drawing.Point(90, 19);
+            this.dxTrackBar1.Location = new System.Drawing.Point(77, 19);
+            this.dxTrackBar1.Maximum = 9;
             this.dxTrackBar1.Name = "dxTrackBar1";
             this.dxTrackBar1.Size = new System.Drawing.Size(104, 45);
             this.dxTrackBar1.TabIndex = 0;
+            this.dxTrackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.dxTrackBar1.Scroll += new System.EventHandler(this.dxTrackBar1_Scroll);
             // 
             // paramaBox
             // 
