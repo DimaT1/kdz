@@ -12,9 +12,22 @@ namespace KDZ1
 {
     public partial class Form1 : Form
     {
+        MyFunction f;
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            f = new MyFunction(1, 0.01);
+            Plot.Print(chart, f);   
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.ExitThread();
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -22,34 +35,10 @@ namespace KDZ1
             Application.ExitThread();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void paramaUpDown_ValueChanged(object sender, EventArgs e)
         {
-            Application.ExitThread();
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void trackBar1_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        private void trackBar2_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            MyFunction F = new MyFunction(-10, 0.01);
-            /*
-            for(double x = 0; x < 6; x += 0.01)
-            {
-                chart.Series[0].Points.AddXY(x, F.Evaluate(x));
-            }*/
+            f.A = (int)paramaUpDown.Value;
+            Plot.Print(chart, f);
         }
     }
 }

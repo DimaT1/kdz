@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,46 +40,49 @@
             this.paramaUpDown = new System.Windows.Forms.NumericUpDown();
             this.aLabel = new System.Windows.Forms.Label();
             this.dxBox = new System.Windows.Forms.GroupBox();
-            this.dxTrackBar1 = new System.Windows.Forms.TrackBar();
-            this.dxTrackBar2 = new System.Windows.Forms.TrackBar();
-            this.dxLabel2 = new System.Windows.Forms.Label();
-            this.dxLabel3 = new System.Windows.Forms.Label();
             this.dxLabel1 = new System.Windows.Forms.Label();
+            this.dxLabel3 = new System.Windows.Forms.Label();
+            this.dxLabel2 = new System.Windows.Forms.Label();
+            this.dxTrackBar2 = new System.Windows.Forms.TrackBar();
+            this.dxTrackBar1 = new System.Windows.Forms.TrackBar();
             this.paramaBox = new System.Windows.Forms.GroupBox();
             this.defaultSetButton = new System.Windows.Forms.Button();
             this.colorBox = new System.Windows.Forms.GroupBox();
-            this.colorButton1 = new System.Windows.Forms.Button();
-            this.colorButton2 = new System.Windows.Forms.Button();
             this.colorButton3 = new System.Windows.Forms.Button();
+            this.colorButton2 = new System.Windows.Forms.Button();
+            this.colorButton1 = new System.Windows.Forms.Button();
             this.highlightButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paramaUpDown)).BeginInit();
             this.dxBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dxTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxTrackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxTrackBar1)).BeginInit();
             this.paramaBox.SuspendLayout();
             this.colorBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // chart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart.Legends.Add(legend3);
             this.chart.Location = new System.Drawing.Point(12, 25);
             this.chart.Name = "chart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.Name = "Series2";
-            this.chart.Series.Add(series1);
-            this.chart.Series.Add(series2);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.EmptyPointStyle.Name = "Функция";
+            series5.Legend = "Legend1";
+            series5.LegendText = "Функция";
+            series5.Name = "Series1";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Legend = "Legend1";
+            series6.LegendText = "Производная";
+            series6.Name = "Series2";
+            this.chart.Series.Add(series5);
+            this.chart.Series.Add(series6);
             this.chart.Size = new System.Drawing.Size(640, 420);
             this.chart.TabIndex = 0;
             this.chart.Text = "chart1";
@@ -105,7 +108,7 @@
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -117,11 +120,21 @@
             this.exitButton.TabIndex = 2;
             this.exitButton.Text = "Выход";
             this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.button1_Click);
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // paramaUpDown
             // 
             this.paramaUpDown.Location = new System.Drawing.Point(57, 27);
+            this.paramaUpDown.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.paramaUpDown.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            -2147483648});
             this.paramaUpDown.Name = "paramaUpDown";
             this.paramaUpDown.Size = new System.Drawing.Size(50, 20);
             this.paramaUpDown.TabIndex = 3;
@@ -130,7 +143,7 @@
             0,
             0,
             0});
-            this.paramaUpDown.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.paramaUpDown.ValueChanged += new System.EventHandler(this.paramaUpDown_ValueChanged);
             // 
             // aLabel
             // 
@@ -155,30 +168,14 @@
             this.dxBox.TabStop = false;
             this.dxBox.Text = "Настройка Δx";
             // 
-            // dxTrackBar1
+            // dxLabel1
             // 
-            this.dxTrackBar1.Location = new System.Drawing.Point(90, 19);
-            this.dxTrackBar1.Name = "dxTrackBar1";
-            this.dxTrackBar1.Size = new System.Drawing.Size(104, 45);
-            this.dxTrackBar1.TabIndex = 0;
-            this.dxTrackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-            // 
-            // dxTrackBar2
-            // 
-            this.dxTrackBar2.Location = new System.Drawing.Point(90, 59);
-            this.dxTrackBar2.Name = "dxTrackBar2";
-            this.dxTrackBar2.Size = new System.Drawing.Size(104, 45);
-            this.dxTrackBar2.TabIndex = 1;
-            this.dxTrackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
-            // 
-            // dxLabel2
-            // 
-            this.dxLabel2.AutoSize = true;
-            this.dxLabel2.Location = new System.Drawing.Point(197, 34);
-            this.dxLabel2.Name = "dxLabel2";
-            this.dxLabel2.Size = new System.Drawing.Size(35, 13);
-            this.dxLabel2.TabIndex = 2;
-            this.dxLabel2.Text = "label2";
+            this.dxLabel1.AutoSize = true;
+            this.dxLabel1.Location = new System.Drawing.Point(18, 51);
+            this.dxLabel1.Name = "dxLabel1";
+            this.dxLabel1.Size = new System.Drawing.Size(35, 13);
+            this.dxLabel1.TabIndex = 4;
+            this.dxLabel1.Text = "label4";
             // 
             // dxLabel3
             // 
@@ -189,15 +186,28 @@
             this.dxLabel3.TabIndex = 3;
             this.dxLabel3.Text = "label3";
             // 
-            // dxLabel1
+            // dxLabel2
             // 
-            this.dxLabel1.AutoSize = true;
-            this.dxLabel1.Location = new System.Drawing.Point(18, 51);
-            this.dxLabel1.Name = "dxLabel1";
-            this.dxLabel1.Size = new System.Drawing.Size(35, 13);
-            this.dxLabel1.TabIndex = 4;
-            this.dxLabel1.Text = "label4";
-            //this.dxLabel1.Click += new System.EventHandler(this.dxLabel_Click);
+            this.dxLabel2.AutoSize = true;
+            this.dxLabel2.Location = new System.Drawing.Point(197, 34);
+            this.dxLabel2.Name = "dxLabel2";
+            this.dxLabel2.Size = new System.Drawing.Size(35, 13);
+            this.dxLabel2.TabIndex = 2;
+            this.dxLabel2.Text = "label2";
+            // 
+            // dxTrackBar2
+            // 
+            this.dxTrackBar2.Location = new System.Drawing.Point(90, 59);
+            this.dxTrackBar2.Name = "dxTrackBar2";
+            this.dxTrackBar2.Size = new System.Drawing.Size(104, 45);
+            this.dxTrackBar2.TabIndex = 1;
+            // 
+            // dxTrackBar1
+            // 
+            this.dxTrackBar1.Location = new System.Drawing.Point(90, 19);
+            this.dxTrackBar1.Name = "dxTrackBar1";
+            this.dxTrackBar1.Size = new System.Drawing.Size(104, 45);
+            this.dxTrackBar1.TabIndex = 0;
             // 
             // paramaBox
             // 
@@ -231,14 +241,14 @@
             this.colorBox.TabStop = false;
             this.colorBox.Text = "Настройка цветов";
             // 
-            // colorButton1
+            // colorButton3
             // 
-            this.colorButton1.Location = new System.Drawing.Point(6, 24);
-            this.colorButton1.Name = "colorButton1";
-            this.colorButton1.Size = new System.Drawing.Size(75, 23);
-            this.colorButton1.TabIndex = 0;
-            this.colorButton1.Text = "Цвет 1";
-            this.colorButton1.UseVisualStyleBackColor = true;
+            this.colorButton3.Location = new System.Drawing.Point(166, 24);
+            this.colorButton3.Name = "colorButton3";
+            this.colorButton3.Size = new System.Drawing.Size(75, 23);
+            this.colorButton3.TabIndex = 2;
+            this.colorButton3.Text = "Цвет 3";
+            this.colorButton3.UseVisualStyleBackColor = true;
             // 
             // colorButton2
             // 
@@ -249,14 +259,14 @@
             this.colorButton2.Text = "Цвет 2";
             this.colorButton2.UseVisualStyleBackColor = true;
             // 
-            // colorButton3
+            // colorButton1
             // 
-            this.colorButton3.Location = new System.Drawing.Point(166, 24);
-            this.colorButton3.Name = "colorButton3";
-            this.colorButton3.Size = new System.Drawing.Size(75, 23);
-            this.colorButton3.TabIndex = 2;
-            this.colorButton3.Text = "Цвет 3";
-            this.colorButton3.UseVisualStyleBackColor = true;
+            this.colorButton1.Location = new System.Drawing.Point(6, 24);
+            this.colorButton1.Name = "colorButton1";
+            this.colorButton1.Size = new System.Drawing.Size(75, 23);
+            this.colorButton1.TabIndex = 0;
+            this.colorButton1.Text = "Цвет 1";
+            this.colorButton1.UseVisualStyleBackColor = true;
             // 
             // highlightButton
             // 
@@ -290,8 +300,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.paramaUpDown)).EndInit();
             this.dxBox.ResumeLayout(false);
             this.dxBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dxTrackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxTrackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxTrackBar1)).EndInit();
             this.paramaBox.ResumeLayout(false);
             this.paramaBox.PerformLayout();
             this.colorBox.ResumeLayout(false);
