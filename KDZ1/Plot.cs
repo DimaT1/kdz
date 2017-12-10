@@ -28,7 +28,7 @@ namespace KDZ1
         public Plot()
         {
             color1 = Color.IndianRed;
-            color2 = Color.LightCoral;
+            color2 = Color.LightBlue;
             color3 = Color.Green;
         }
 
