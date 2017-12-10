@@ -110,5 +110,30 @@ namespace KDZ1
             f.DeltaX = TrackBarValuesToDouble(dxTrackBar1.Value, dxTrackBar2.Value);
             plot.Clear(chart);
         }
+
+        private void нарисоватьГрафикToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            plot.Print(chart, f);
+        }
+
+        private void выделитьПромежуткиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            plot.Print(chart, f, highlight: true);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            plot.Print(chart, f);
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            Application.ExitThread();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            plot.Print(chart, f, highlight: true);
+        }
     }
 }

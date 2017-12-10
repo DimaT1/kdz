@@ -48,7 +48,7 @@ namespace KDZ1
             chart.Series[1].Color = color2;
 
 
-            for (double x = 0; x < 4; x += 0.01)
+            for (double x = 0; x < 3.5; x += 0.01)
             {
                 chart.Series[0].Points.AddXY(x, f.Evaluate(x));
                 chart.Series[1].Points.AddXY(x, f.Derivative(x));
