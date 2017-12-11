@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -62,6 +63,10 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.экспортВGifToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paramaUpDown)).BeginInit();
@@ -76,32 +81,32 @@
             // chart
             // 
             this.chart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            chartArea3.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea3.AxisX.Title = "X";
-            chartArea3.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
-            chartArea3.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea3.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea3.AxisY.Title = "Y";
-            chartArea3.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
-            chartArea3.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart.Legends.Add(legend3);
+            chartArea10.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea10.AxisX.Title = "X";
+            chartArea10.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea10.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea10.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea10.AxisY.Title = "Y";
+            chartArea10.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea10.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chart.Legends.Add(legend10);
             this.chart.Location = new System.Drawing.Point(12, 52);
             this.chart.Name = "chart";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.EmptyPointStyle.Name = "Функция";
-            series5.Legend = "Legend1";
-            series5.LegendText = "Функция";
-            series5.Name = "Series1";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Legend = "Legend1";
-            series6.LegendText = "Производная";
-            series6.Name = "Series2";
-            this.chart.Series.Add(series5);
-            this.chart.Series.Add(series6);
+            series19.ChartArea = "ChartArea1";
+            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series19.EmptyPointStyle.Name = "Функция";
+            series19.Legend = "Legend1";
+            series19.LegendText = "Функция";
+            series19.Name = "Series1";
+            series20.ChartArea = "ChartArea1";
+            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series20.Legend = "Legend1";
+            series20.LegendText = "Производная";
+            series20.Name = "Series2";
+            this.chart.Series.Add(series19);
+            this.chart.Series.Add(series20);
             this.chart.Size = new System.Drawing.Size(760, 393);
             this.chart.TabIndex = 0;
             this.chart.Text = "chart1";
@@ -120,6 +125,7 @@
             // менюToolStripMenuItem
             // 
             this.менюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.экспортВGifToolStripMenuItem,
             this.выходToolStripMenuItem});
             this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
             this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
@@ -140,6 +146,7 @@
             this.exitButton.Size = new System.Drawing.Size(114, 110);
             this.exitButton.TabIndex = 2;
             this.exitButton.Text = "Выход";
+            this.toolTip1.SetToolTip(this.exitButton, "Выход из программы");
             this.exitButton.UseVisualStyleBackColor = false;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
@@ -159,6 +166,7 @@
             this.paramaUpDown.Name = "paramaUpDown";
             this.paramaUpDown.Size = new System.Drawing.Size(50, 20);
             this.paramaUpDown.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.paramaUpDown, "Параметр a");
             this.paramaUpDown.Value = new decimal(new int[] {
             1,
             0,
@@ -188,6 +196,7 @@
             this.dxBox.TabIndex = 5;
             this.dxBox.TabStop = false;
             this.dxBox.Text = "Настройка Δx";
+            this.toolTip1.SetToolTip(this.dxBox, "Δx - шаг при дифференцировании по определению");
             // 
             // dxLabel1
             // 
@@ -224,6 +233,7 @@
             this.dxTrackBar2.Size = new System.Drawing.Size(104, 45);
             this.dxTrackBar2.TabIndex = 1;
             this.dxTrackBar2.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.toolTip1.SetToolTip(this.dxTrackBar2, "Настройка сотых Δx");
             this.dxTrackBar2.Value = 1;
             this.dxTrackBar2.Scroll += new System.EventHandler(this.dxTrackBar2_Scroll);
             // 
@@ -235,6 +245,7 @@
             this.dxTrackBar1.Size = new System.Drawing.Size(104, 45);
             this.dxTrackBar1.TabIndex = 0;
             this.dxTrackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.toolTip1.SetToolTip(this.dxTrackBar1, "Настройка десятых Δx");
             this.dxTrackBar1.Scroll += new System.EventHandler(this.dxTrackBar1_Scroll);
             // 
             // paramaBox
@@ -255,6 +266,7 @@
             this.defaultSetButton.Size = new System.Drawing.Size(143, 40);
             this.defaultSetButton.TabIndex = 7;
             this.defaultSetButton.Text = "По умолчанию";
+            this.toolTip1.SetToolTip(this.defaultSetButton, "График отсутствует, параметр a = 1");
             this.defaultSetButton.UseVisualStyleBackColor = true;
             this.defaultSetButton.Click += new System.EventHandler(this.defaultSetButton_Click);
             // 
@@ -277,6 +289,7 @@
             this.colorButton3.Size = new System.Drawing.Size(75, 23);
             this.colorButton3.TabIndex = 2;
             this.colorButton3.Text = "Цвет 3";
+            this.toolTip1.SetToolTip(this.colorButton3, "Выбор цвета выделения");
             this.colorButton3.UseVisualStyleBackColor = true;
             this.colorButton3.Click += new System.EventHandler(this.colorButton3_Click);
             // 
@@ -287,6 +300,7 @@
             this.colorButton2.Size = new System.Drawing.Size(75, 23);
             this.colorButton2.TabIndex = 1;
             this.colorButton2.Text = "Цвет 2";
+            this.toolTip1.SetToolTip(this.colorButton2, "Выбор цвета графика производной");
             this.colorButton2.UseVisualStyleBackColor = true;
             this.colorButton2.Click += new System.EventHandler(this.colorButton2_Click);
             // 
@@ -297,6 +311,7 @@
             this.colorButton1.Size = new System.Drawing.Size(75, 23);
             this.colorButton1.TabIndex = 0;
             this.colorButton1.Text = "Цвет 1";
+            this.toolTip1.SetToolTip(this.colorButton1, "Выбор цвета графика функции");
             this.colorButton1.UseVisualStyleBackColor = true;
             this.colorButton1.Click += new System.EventHandler(this.colorButton1_Click);
             // 
@@ -307,6 +322,7 @@
             this.highlightButton.Size = new System.Drawing.Size(247, 39);
             this.highlightButton.TabIndex = 9;
             this.highlightButton.Text = "Выделить промежутки";
+            this.toolTip1.SetToolTip(this.highlightButton, "Выделять цветом на графике промежутки F(x) ≤ 0 & F’(x) < 0");
             this.highlightButton.UseVisualStyleBackColor = true;
             this.highlightButton.Click += new System.EventHandler(this.highlightButton_Click);
             // 
@@ -338,6 +354,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton3,
+            this.toolStripButton4,
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
@@ -363,6 +380,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(45, 22);
             this.toolStripButton2.Text = "Выход";
+            this.toolStripButton2.ToolTipText = "Выход из программы";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
@@ -374,6 +392,28 @@
             this.toolStripButton3.Size = new System.Drawing.Size(136, 22);
             this.toolStripButton3.Text = "Выделить промежутки";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Подсказка";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(146, 22);
+            this.toolStripButton4.Text = "Сохранить изображение";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // экспортВGifToolStripMenuItem
+            // 
+            this.экспортВGifToolStripMenuItem.Name = "экспортВGifToolStripMenuItem";
+            this.экспортВGifToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.экспортВGifToolStripMenuItem.Text = "Экспорт в gif";
+            this.экспортВGifToolStripMenuItem.Click += new System.EventHandler(this.экспортВGifToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -442,6 +482,10 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem экспортВGifToolStripMenuItem;
     }
 }
 

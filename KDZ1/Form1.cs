@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace KDZ1
 {
@@ -28,6 +30,15 @@ namespace KDZ1
             label1.Text = $"Δx = {TrackBarValuesToDouble(track1, track2)}";
         }
 
+        private static void SaveToFile(SaveFileDialog saveFileDialog1, Chart chart)
+        {
+            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                string filename = saveFileDialog1.FileName;
+                chart.SaveImage(filename, System.Drawing.Imaging.ImageFormat.Gif);
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -41,6 +52,7 @@ namespace KDZ1
             ResetTrackBarLabels(dxTrackBar1.Value, dxTrackBar2.Value, dxLabel1, dxLabel2, dxLabel3);
             f.DeltaX = TrackBarValuesToDouble(dxTrackBar1.Value, dxTrackBar2.Value);
             plot.Clear(chart);
+            saveFileDialog1.Filter = "Image Files(*.gif)|*.gif|All files(*.*)|*.*"; 
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -134,6 +146,16 @@ namespace KDZ1
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             plot.Print(chart, f, highlight: true);
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            SaveToFile(saveFileDialog1, chart);
+        }
+
+        private void экспортВGifToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveToFile(saveFileDialog1, chart);
         }
     }
 }
