@@ -73,7 +73,9 @@ namespace KDZ1
         {
             double deltaX = e.Delta * 0.05;
             double deltaY = e.Delta * 0.5;
-            if (chart.ChartAreas[0].AxisX.Maximum + deltaX > 2 && chart.ChartAreas[0].AxisY.Maximum + deltaY > 2)
+            if (chart.ChartAreas[0].AxisX.Maximum + deltaX > 2 &&
+                chart.ChartAreas[0].AxisY.Maximum + deltaY > 2 &&
+                chart.ChartAreas[0].AxisX.Maximum + deltaX < 8)
             {
                 chart.ChartAreas[0].AxisX.Maximum += deltaX;
                 chart.ChartAreas[0].AxisY.Maximum += deltaY;
