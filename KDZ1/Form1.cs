@@ -1,27 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace KDZ1
 {
     public partial class Form1 : Form
     {
+        // Объявление объекта функции и построителя графиков
         MyFunction f;
         Plot plot;
 
+        /// <summary>
+        /// Расчёт значения введённого на TrackBar 
+        /// </summary>
+        /// <param name="a">Верхний TrackBar</param>
+        /// <param name="b">Нижний TrackBar</param>
+        /// <returns>Введённое значение</returns>
         private static double TrackBarValuesToDouble(decimal a, decimal b)
         {
             return 0.1 * (double)a + 0.01 * (double)b;
         }
 
+        /// <summary>
+        /// Перерасчёт показаний TrackBar на форме
+        /// </summary>
+        /// <param name="track1">Верхний TrackBar</param>
+        /// <param name="track2">Нижний TrackBar</param>
+        /// <param name="label1">Показания Δx</param>
+        /// <param name="label2">Показания верхнего TrackBar</param>
+        /// <param name="label3">Показания нижнего TrackBar</param>
         private static void ResetTrackBarLabels(decimal track1, decimal track2,
                                                 Label label1, Label label2, Label label3)
         {
@@ -30,6 +37,11 @@ namespace KDZ1
             label1.Text = $"Δx = {TrackBarValuesToDouble(track1, track2)}";
         }
 
+        /// <summary>
+        /// Сохранение графика в файл
+        /// </summary>
+        /// <param name="saveFileDialog1">Диалог сохранения</param>
+        /// <param name="chart">Чертёж</param>
         private static void SaveToFile(SaveFileDialog saveFileDialog1, Chart chart)
         {
             if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
@@ -46,6 +58,7 @@ namespace KDZ1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Инициализация
             colorDialog1.FullOpen = true;
             f = new MyFunction(1, 0.01);
             plot = new Plot();

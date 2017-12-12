@@ -29,15 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.экспортВGifToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.видToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.нарисоватьГрафикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выделитьПромежуткиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitButton = new System.Windows.Forms.Button();
             this.paramaUpDown = new System.Windows.Forms.NumericUpDown();
             this.aLabel = new System.Windows.Forms.Label();
@@ -56,17 +60,13 @@
             this.highlightButton = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.видToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.нарисоватьГрафикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выделитьПромежуткиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.экспортВGifToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paramaUpDown)).BeginInit();
@@ -81,32 +81,36 @@
             // chart
             // 
             this.chart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            chartArea10.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea10.AxisX.Title = "X";
-            chartArea10.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
-            chartArea10.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea10.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea10.AxisY.Title = "Y";
-            chartArea10.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
-            chartArea10.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.chart.Legends.Add(legend10);
+            chartArea2.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea2.AxisX.Title = "X";
+            chartArea2.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea2.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea2.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea2.AxisY.Title = "Y";
+            chartArea2.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea2.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart.Legends.Add(legend2);
             this.chart.Location = new System.Drawing.Point(12, 52);
             this.chart.Name = "chart";
-            series19.ChartArea = "ChartArea1";
-            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series19.EmptyPointStyle.Name = "Функция";
-            series19.Legend = "Legend1";
-            series19.LegendText = "Функция";
-            series19.Name = "Series1";
-            series20.ChartArea = "ChartArea1";
-            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series20.Legend = "Legend1";
-            series20.LegendText = "Производная";
-            series20.Name = "Series2";
-            this.chart.Series.Add(series19);
-            this.chart.Series.Add(series20);
+            this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chart.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.IndianRed,
+        System.Drawing.Color.LightBlue};
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.EmptyPointStyle.Name = "Функция";
+            series3.Legend = "Legend1";
+            series3.LegendText = "Функция";
+            series3.Name = "Series1";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Legend = "Legend1";
+            series4.LegendText = "Производная";
+            series4.Name = "Series2";
+            this.chart.Series.Add(series3);
+            this.chart.Series.Add(series4);
             this.chart.Size = new System.Drawing.Size(760, 393);
             this.chart.TabIndex = 0;
             this.chart.Text = "chart1";
@@ -131,12 +135,42 @@
             this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.менюToolStripMenuItem.Text = "Меню";
             // 
+            // экспортВGifToolStripMenuItem
+            // 
+            this.экспортВGifToolStripMenuItem.Name = "экспортВGifToolStripMenuItem";
+            this.экспортВGifToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.экспортВGifToolStripMenuItem.Text = "Экспорт в gif";
+            this.экспортВGifToolStripMenuItem.Click += new System.EventHandler(this.экспортВGifToolStripMenuItem_Click);
+            // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+            // 
+            // видToolStripMenuItem
+            // 
+            this.видToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.нарисоватьГрафикToolStripMenuItem,
+            this.выделитьПромежуткиToolStripMenuItem});
+            this.видToolStripMenuItem.Name = "видToolStripMenuItem";
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.видToolStripMenuItem.Text = "Вид";
+            // 
+            // нарисоватьГрафикToolStripMenuItem
+            // 
+            this.нарисоватьГрафикToolStripMenuItem.Name = "нарисоватьГрафикToolStripMenuItem";
+            this.нарисоватьГрафикToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.нарисоватьГрафикToolStripMenuItem.Text = "Нарисовать график";
+            this.нарисоватьГрафикToolStripMenuItem.Click += new System.EventHandler(this.нарисоватьГрафикToolStripMenuItem_Click);
+            // 
+            // выделитьПромежуткиToolStripMenuItem
+            // 
+            this.выделитьПромежуткиToolStripMenuItem.Name = "выделитьПромежуткиToolStripMenuItem";
+            this.выделитьПромежуткиToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.выделитьПромежуткиToolStripMenuItem.Text = "Выделить промежутки";
+            this.выделитьПромежуткиToolStripMenuItem.Click += new System.EventHandler(this.выделитьПромежуткиToolStripMenuItem_Click);
             // 
             // exitButton
             // 
@@ -206,6 +240,7 @@
             this.dxLabel1.Size = new System.Drawing.Size(35, 13);
             this.dxLabel1.TabIndex = 4;
             this.dxLabel1.Text = "label4";
+            this.toolTip1.SetToolTip(this.dxLabel1, "Δx - шаг при дифференцировании по определению");
             // 
             // dxLabel3
             // 
@@ -326,29 +361,6 @@
             this.highlightButton.UseVisualStyleBackColor = true;
             this.highlightButton.Click += new System.EventHandler(this.highlightButton_Click);
             // 
-            // видToolStripMenuItem
-            // 
-            this.видToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.нарисоватьГрафикToolStripMenuItem,
-            this.выделитьПромежуткиToolStripMenuItem});
-            this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.видToolStripMenuItem.Text = "Вид";
-            // 
-            // нарисоватьГрафикToolStripMenuItem
-            // 
-            this.нарисоватьГрафикToolStripMenuItem.Name = "нарисоватьГрафикToolStripMenuItem";
-            this.нарисоватьГрафикToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.нарисоватьГрафикToolStripMenuItem.Text = "Нарисовать график";
-            this.нарисоватьГрафикToolStripMenuItem.Click += new System.EventHandler(this.нарисоватьГрафикToolStripMenuItem_Click);
-            // 
-            // выделитьПромежуткиToolStripMenuItem
-            // 
-            this.выделитьПромежуткиToolStripMenuItem.Name = "выделитьПромежуткиToolStripMenuItem";
-            this.выделитьПромежуткиToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.выделитьПромежуткиToolStripMenuItem.Text = "Выделить промежутки";
-            this.выделитьПромежуткиToolStripMenuItem.Click += new System.EventHandler(this.выделитьПромежуткиToolStripMenuItem_Click);
-            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -372,17 +384,6 @@
             this.toolStripButton1.Text = "Нарисовать график";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(45, 22);
-            this.toolStripButton2.Text = "Выход";
-            this.toolStripButton2.ToolTipText = "Выход из программы";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
             // toolStripButton3
             // 
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -392,11 +393,6 @@
             this.toolStripButton3.Size = new System.Drawing.Size(136, 22);
             this.toolStripButton3.Text = "Выделить промежутки";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "Подсказка";
             // 
             // toolStripButton4
             // 
@@ -408,12 +404,21 @@
             this.toolStripButton4.Text = "Сохранить изображение";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
-            // экспортВGifToolStripMenuItem
+            // toolStripButton2
             // 
-            this.экспортВGifToolStripMenuItem.Name = "экспортВGifToolStripMenuItem";
-            this.экспортВGifToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.экспортВGifToolStripMenuItem.Text = "Экспорт в gif";
-            this.экспортВGifToolStripMenuItem.Click += new System.EventHandler(this.экспортВGifToolStripMenuItem_Click);
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(45, 22);
+            this.toolStripButton2.Text = "Выход";
+            this.toolStripButton2.ToolTipText = "Выход из программы";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Подсказка";
             // 
             // Form1
             // 
