@@ -65,7 +65,22 @@ namespace KDZ1
             ResetTrackBarLabels(dxTrackBar1.Value, dxTrackBar2.Value, dxLabel1, dxLabel2, dxLabel3);
             f.DeltaX = TrackBarValuesToDouble(dxTrackBar1.Value, dxTrackBar2.Value);
             plot.Clear(chart);
-            saveFileDialog1.Filter = "Image Files(*.gif)|*.gif|All files(*.*)|*.*"; 
+            saveFileDialog1.Filter = "Image Files(*.gif)|*.gif|All files(*.*)|*.*";
+            chart.MouseWheel += Chart_MouseWheel;
+        }
+
+        private void Chart_MouseWheel(object sender, MouseEventArgs e)
+        {
+            double deltaX = e.Delta * 0.05;
+            double deltaY = e.Delta * 0.5;
+            if (chart.ChartAreas[0].AxisX.Maximum + deltaX > 2 && chart.ChartAreas[0].AxisY.Maximum + deltaY > 2)
+            {
+                chart.ChartAreas[0].AxisX.Maximum += deltaX;
+                chart.ChartAreas[0].AxisY.Maximum += deltaY;
+            }
+            f = new MyFunction(1, 0.01);
+            plot = new Plot(chart.ChartAreas[0].AxisX.Maximum);
+            plot.Print(chart, f);
         }
 
         private void exitButton_Click(object sender, EventArgs e)

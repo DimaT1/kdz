@@ -16,7 +16,7 @@ namespace KDZ1
         /// <summary>
         /// Правая граница расчёта точек
         /// </summary>
-        private const double rightBound = 4;
+        private double rightBound = 4;
 
         /// <summary>
         /// Цвет на графике
@@ -52,6 +52,14 @@ namespace KDZ1
         /// </summary>
         public Plot()
         {
+            color1 = Color.IndianRed;
+            color2 = Color.LightBlue;
+            color3 = Color.Green;
+        }
+
+        public Plot(double _rightBound)
+        {
+            rightBound = _rightBound;
             color1 = Color.IndianRed;
             color2 = Color.LightBlue;
             color3 = Color.Green;
