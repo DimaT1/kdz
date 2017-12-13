@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -67,12 +68,23 @@ namespace KDZ1
             plot.Clear(chart);
             saveFileDialog1.Filter = "Image Files(*.gif)|*.gif|All files(*.*)|*.*";
             chart.MouseWheel += Chart_MouseWheel;
+            this.SizeChanged += Form1_SizeChanged;
+            this.MinimumSize = defaultSize;
+        }
+
+        private Size defaultSize = new Size(800, 600);
+        private void Form1_SizeChanged(object sender, EventArgs e)
+        {
+            Size size = (sender as Form).Size;
+            Size chartSize = new Size(size.Width - 40, size.Height - 210);
+            this.chart.Size = chartSize;
+            //this.dxBox.
         }
 
         private void Chart_MouseWheel(object sender, MouseEventArgs e)
         {
-            double deltaX = e.Delta * 0.05;
-            double deltaY = e.Delta * 0.5;
+            double deltaX = e.Delta * 0.01;
+            double deltaY = e.Delta * 0.1;
             if (chart.ChartAreas[0].AxisX.Maximum + deltaX > 2 &&
                 chart.ChartAreas[0].AxisY.Maximum + deltaY > 2 &&
                 chart.ChartAreas[0].AxisX.Maximum + deltaX < 8)
