@@ -174,6 +174,7 @@
             // 
             // exitButton
             // 
+            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.exitButton.BackColor = System.Drawing.Color.Tan;
             this.exitButton.Location = new System.Drawing.Point(658, 449);
             this.exitButton.Name = "exitButton";
@@ -219,6 +220,7 @@
             // 
             // dxBox
             // 
+            this.dxBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dxBox.Controls.Add(this.dxLabel1);
             this.dxBox.Controls.Add(this.dxLabel3);
             this.dxBox.Controls.Add(this.dxLabel2);
@@ -285,6 +287,7 @@
             // 
             // paramaBox
             // 
+            this.paramaBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.paramaBox.Controls.Add(this.paramaUpDown);
             this.paramaBox.Controls.Add(this.aLabel);
             this.paramaBox.Location = new System.Drawing.Point(256, 449);
@@ -296,6 +299,7 @@
             // 
             // defaultSetButton
             // 
+            this.defaultSetButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.defaultSetButton.Location = new System.Drawing.Point(256, 519);
             this.defaultSetButton.Name = "defaultSetButton";
             this.defaultSetButton.Size = new System.Drawing.Size(143, 40);
@@ -307,6 +311,7 @@
             // 
             // colorBox
             // 
+            this.colorBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.colorBox.Controls.Add(this.colorButton3);
             this.colorBox.Controls.Add(this.colorButton2);
             this.colorBox.Controls.Add(this.colorButton1);
@@ -352,6 +357,7 @@
             // 
             // highlightButton
             // 
+            this.highlightButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.highlightButton.Location = new System.Drawing.Point(405, 520);
             this.highlightButton.Name = "highlightButton";
             this.highlightButton.Size = new System.Drawing.Size(247, 39);
