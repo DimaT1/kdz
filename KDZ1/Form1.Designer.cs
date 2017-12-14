@@ -47,10 +47,10 @@
             this.aLabel = new System.Windows.Forms.Label();
             this.dxBox = new System.Windows.Forms.GroupBox();
             this.dxLabel1 = new System.Windows.Forms.Label();
+            this.dxLabel3 = new System.Windows.Forms.Label();
             this.dxLabel2 = new System.Windows.Forms.Label();
             this.dxTrackBar2 = new System.Windows.Forms.TrackBar();
             this.dxTrackBar1 = new System.Windows.Forms.TrackBar();
-            this.dxLabel3 = new System.Windows.Forms.Label();
             this.paramaBox = new System.Windows.Forms.GroupBox();
             this.defaultSetButton = new System.Windows.Forms.Button();
             this.colorBox = new System.Windows.Forms.GroupBox();
@@ -67,6 +67,9 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.colorDialog2 = new System.Windows.Forms.ColorDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paramaUpDown)).BeginInit();
@@ -76,6 +79,7 @@
             this.paramaBox.SuspendLayout();
             this.colorBox.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // chart
@@ -122,7 +126,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.менюToolStripMenuItem,
-            this.видToolStripMenuItem});
+            this.видToolStripMenuItem,
+            this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(784, 24);
@@ -247,6 +252,15 @@
             this.dxLabel1.Text = "label4";
             this.toolTip1.SetToolTip(this.dxLabel1, "Δx - шаг при дифференцировании по определению");
             // 
+            // dxLabel3
+            // 
+            this.dxLabel3.AutoSize = true;
+            this.dxLabel3.Location = new System.Drawing.Point(187, 71);
+            this.dxLabel3.Name = "dxLabel3";
+            this.dxLabel3.Size = new System.Drawing.Size(35, 13);
+            this.dxLabel3.TabIndex = 3;
+            this.dxLabel3.Text = "label3";
+            // 
             // dxLabel2
             // 
             this.dxLabel2.AutoSize = true;
@@ -278,15 +292,6 @@
             this.dxTrackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.toolTip1.SetToolTip(this.dxTrackBar1, "Настройка десятых Δx");
             this.dxTrackBar1.Scroll += new System.EventHandler(this.dxTrackBar1_Scroll);
-            // 
-            // dxLabel3
-            // 
-            this.dxLabel3.AutoSize = true;
-            this.dxLabel3.Location = new System.Drawing.Point(187, 71);
-            this.dxLabel3.Name = "dxLabel3";
-            this.dxLabel3.Size = new System.Drawing.Size(35, 13);
-            this.dxLabel3.TabIndex = 3;
-            this.dxLabel3.Text = "label3";
             // 
             // paramaBox
             // 
@@ -429,11 +434,29 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Подсказка";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 52);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(760, 393);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            this.справкаToolStripMenuItem.Click += new System.EventHandler(this.справкаToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.highlightButton);
             this.Controls.Add(this.colorBox);
@@ -461,6 +484,7 @@
             this.colorBox.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,6 +525,9 @@
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem экспортВGifToolStripMenuItem;
+        private System.Windows.Forms.ColorDialog colorDialog2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
     }
 }
 

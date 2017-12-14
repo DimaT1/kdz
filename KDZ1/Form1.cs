@@ -65,7 +65,9 @@ namespace KDZ1
             ResetTrackBarLabels(dxTrackBar1.Value, dxTrackBar2.Value, dxLabel1, dxLabel2, dxLabel3);
             f.DeltaX = TrackBarValuesToDouble(dxTrackBar1.Value, dxTrackBar2.Value);
             plot.Clear(chart);
-            saveFileDialog1.Filter = "Image Files(*.gif)|*.gif|All files(*.*)|*.*"; 
+            saveFileDialog1.Filter = "Image Files(*.gif)|*.gif|All files(*.*)|*.*";
+            chart.ChartAreas[0].AxisX.Maximum = 4;
+            chart.ChartAreas[0].AxisX.Minimum = 0;
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -169,6 +171,21 @@ namespace KDZ1
         private void экспортВGifToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveToFile(saveFileDialog1, chart);
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+        }
+
+        private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = true;
         }
     }
 }
