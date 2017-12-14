@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -47,10 +47,10 @@
             this.aLabel = new System.Windows.Forms.Label();
             this.dxBox = new System.Windows.Forms.GroupBox();
             this.dxLabel1 = new System.Windows.Forms.Label();
-            this.dxLabel3 = new System.Windows.Forms.Label();
             this.dxLabel2 = new System.Windows.Forms.Label();
             this.dxTrackBar2 = new System.Windows.Forms.TrackBar();
             this.dxTrackBar1 = new System.Windows.Forms.TrackBar();
+            this.dxLabel3 = new System.Windows.Forms.Label();
             this.paramaBox = new System.Windows.Forms.GroupBox();
             this.defaultSetButton = new System.Windows.Forms.Button();
             this.colorBox = new System.Windows.Forms.GroupBox();
@@ -80,37 +80,40 @@
             // 
             // chart
             // 
+            this.chart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            chartArea2.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea2.AxisX.Title = "X";
-            chartArea2.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
-            chartArea2.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea2.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea2.AxisY.Title = "Y";
-            chartArea2.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
-            chartArea2.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart.Legends.Add(legend2);
+            chartArea3.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea3.AxisX.Title = "X";
+            chartArea3.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea3.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea3.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea3.AxisY.Title = "Y";
+            chartArea3.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea3.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart.Legends.Add(legend3);
             this.chart.Location = new System.Drawing.Point(12, 52);
             this.chart.Name = "chart";
             this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.chart.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.IndianRed,
         System.Drawing.Color.LightBlue};
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.EmptyPointStyle.Name = "Функция";
-            series3.Legend = "Legend1";
-            series3.LegendText = "Функция";
-            series3.Name = "Series1";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Legend = "Legend1";
-            series4.LegendText = "Производная";
-            series4.Name = "Series2";
-            this.chart.Series.Add(series3);
-            this.chart.Series.Add(series4);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.EmptyPointStyle.Name = "Функция";
+            series5.Legend = "Legend1";
+            series5.LegendText = "Функция";
+            series5.Name = "Series1";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Legend = "Legend1";
+            series6.LegendText = "Производная";
+            series6.Name = "Series2";
+            this.chart.Series.Add(series5);
+            this.chart.Series.Add(series6);
             this.chart.Size = new System.Drawing.Size(760, 393);
             this.chart.TabIndex = 0;
             this.chart.Text = "chart1";
@@ -174,6 +177,7 @@
             // 
             // exitButton
             // 
+            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exitButton.BackColor = System.Drawing.Color.Tan;
             this.exitButton.Location = new System.Drawing.Point(658, 449);
             this.exitButton.Name = "exitButton";
@@ -219,6 +223,7 @@
             // 
             // dxBox
             // 
+            this.dxBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dxBox.Controls.Add(this.dxLabel1);
             this.dxBox.Controls.Add(this.dxLabel3);
             this.dxBox.Controls.Add(this.dxLabel2);
@@ -241,15 +246,6 @@
             this.dxLabel1.TabIndex = 4;
             this.dxLabel1.Text = "label4";
             this.toolTip1.SetToolTip(this.dxLabel1, "Δx - шаг при дифференцировании по определению");
-            // 
-            // dxLabel3
-            // 
-            this.dxLabel3.AutoSize = true;
-            this.dxLabel3.Location = new System.Drawing.Point(187, 70);
-            this.dxLabel3.Name = "dxLabel3";
-            this.dxLabel3.Size = new System.Drawing.Size(35, 13);
-            this.dxLabel3.TabIndex = 3;
-            this.dxLabel3.Text = "label3";
             // 
             // dxLabel2
             // 
@@ -283,8 +279,18 @@
             this.toolTip1.SetToolTip(this.dxTrackBar1, "Настройка десятых Δx");
             this.dxTrackBar1.Scroll += new System.EventHandler(this.dxTrackBar1_Scroll);
             // 
+            // dxLabel3
+            // 
+            this.dxLabel3.AutoSize = true;
+            this.dxLabel3.Location = new System.Drawing.Point(187, 71);
+            this.dxLabel3.Name = "dxLabel3";
+            this.dxLabel3.Size = new System.Drawing.Size(35, 13);
+            this.dxLabel3.TabIndex = 3;
+            this.dxLabel3.Text = "label3";
+            // 
             // paramaBox
             // 
+            this.paramaBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.paramaBox.Controls.Add(this.paramaUpDown);
             this.paramaBox.Controls.Add(this.aLabel);
             this.paramaBox.Location = new System.Drawing.Point(256, 449);
@@ -296,6 +302,7 @@
             // 
             // defaultSetButton
             // 
+            this.defaultSetButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.defaultSetButton.Location = new System.Drawing.Point(256, 519);
             this.defaultSetButton.Name = "defaultSetButton";
             this.defaultSetButton.Size = new System.Drawing.Size(143, 40);
@@ -307,6 +314,7 @@
             // 
             // colorBox
             // 
+            this.colorBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.colorBox.Controls.Add(this.colorButton3);
             this.colorBox.Controls.Add(this.colorButton2);
             this.colorBox.Controls.Add(this.colorButton1);
@@ -352,6 +360,7 @@
             // 
             // highlightButton
             // 
+            this.highlightButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.highlightButton.Location = new System.Drawing.Point(405, 520);
             this.highlightButton.Name = "highlightButton";
             this.highlightButton.Size = new System.Drawing.Size(247, 39);
@@ -435,6 +444,7 @@
             this.Controls.Add(this.chart);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Form1";
             this.Text = "График функции";
             this.Load += new System.EventHandler(this.Form1_Load);
